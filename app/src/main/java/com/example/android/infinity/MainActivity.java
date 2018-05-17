@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         if(stones.contains("MIND STONE")&& stones.contains("SOUL STONE") && stones.contains("REALITY STONE")&&
                 stones.contains("TIME STONE") && stones.contains("SPACE STONE") && stones.contains("POWER STONE")) {
             TextView textView1 = (TextView) findViewById(R.id.stonelist);
-            textView1.setText("YOU HAVE NOTHING!");
+            textView1.setText("");
             stones.clear();
             saveData();
             Intent finalIntent = new Intent(MainActivity.this, FinishActivity.class);
