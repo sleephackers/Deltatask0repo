@@ -48,53 +48,21 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"/>
+
+
     <TextView
+        android:id="@+id/stonelist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You have with you.."
         android:textSize="30sp"
-        android:textStyle="italic"
-        />
-    <TextView
-        android:id="@+id/power"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_gravity="center_horizontal"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/space"
-        android:textSize="25sp"
-        android:layout_gravity="center_horizontal"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:id="@+id/time"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textSize="25sp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/reality"
-        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
 
-        android:textSize="25sp"/>
-    <TextView
-        android:id="@+id/soul"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-
-        android:textSize="25sp"/>
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/mind"
-        android:textSize="25sp"/>
+        android:onClick="reset"
+        android:text="RESET" />
 
 
 </LinearLayout>
