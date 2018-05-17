@@ -28,16 +28,17 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     String retrieved;
     int pos;
-    ArrayList<String> stones = new ArrayList<String>();
+    final int first = 0;
+    ArrayList<String> stones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        loadData();
         textView1 = (TextView) findViewById(R.id.stonelist);
         Color= (Button) findViewById(R.id.colorstone);
         Stone= (TextView) findViewById(R.id.namestone);
+        loadData();
         treasure();
         final Button stonegen = (Button) findViewById(R.id.random);
         stonegen.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             if (stones.contains("SPACE STONE") == FALSE) {
                 stones.add("SPACE STONE");
                 saveData();
+
             }
             Color.setBackgroundColor(getResources().getColor(R.color.blue));
             Stone.setText("SPACE STONE");
@@ -77,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
             if (stones.contains("TIME STONE") == FALSE) {
                 stones.add("TIME STONE");
                 saveData();
+
+
             }
             Color.setBackgroundColor(getResources().getColor(R.color.green));
             Stone.setText("TIME STONE");
@@ -86,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             if (stones.contains("REALITY STONE") == FALSE) {
                 stones.add("REALITY STONE");
                 saveData();
+
             }
             Color.setBackgroundColor(getResources().getColor(R.color.red));
             Stone.setText("REALITY STONE");
@@ -96,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
             if (stones.contains("SOUL STONE") == FALSE) {
                 stones.add("SOUL STONE");
                 saveData();
+
             }
             Color.setBackgroundColor(getResources().getColor(R.color.orange));
             Stone.setText("SOUL STONE");
@@ -106,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             if (stones.contains("MIND STONE") == FALSE) {
                 stones.add("MIND STONE");
                 saveData();
+
             }
             Color.setBackgroundColor(getResources().getColor(R.color.yellow));
             Stone.setText("MIND STONE");
@@ -142,10 +149,10 @@ public class MainActivity extends AppCompatActivity {
     public void treasure() {
         TextView textView1 = (TextView) findViewById(R.id.stonelist);
         String temp;
-        int n = stones.size();
-        if (n == 0)
+        if (stones.isEmpty())
             textView1.setText("YOU HAVE NOTHING!");
         else {
+            int n = stones.size();
             temp = "YOU HAVE WITH YOU: \n";
             for (int i = 0; i < n; i++)
                 temp += stones.get(i) + "\n";
@@ -171,6 +178,9 @@ public class MainActivity extends AppCompatActivity {
         Type type = new TypeToken<ArrayList<String>>() {
         }.getType();
         stones = gson.fromJson(json, type);
+        if (stones == null) {
+            stones = new ArrayList<>();
+        }
 
     }
 
